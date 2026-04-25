@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>upload</title>
+</head>
+<body>
+    <h1>Página de upload</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="imagem" >
+        <button type="submit">Enviar</button>
+    </form>
+
+    {% if url %}
+        <div>
+            <p>Url enviada: {{url}}</p>
+        </div>
+    {% endif %}
+
+    {% if urls %}
+        {% for link in urls %}
+            <div>
+                <img src="{{link}}" alt="" width="150px">
+            </div>
+        {% endfor %}
+    {% endif %}
+
+   
+
+</body>
+</html>
